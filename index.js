@@ -40,9 +40,9 @@ function FaviconsWebpackPlugin (options) {
 
 FaviconsWebpackPlugin.prototype.apply = function (compiler) {
   var self = this;
-  if (!self.options.title) {
-    self.options.title = guessAppName(compiler.context);
-  }
+  if (!self.options.config.appName) {
+    self.options.config.appName = guessAppName(compiler.context);
+  } 
 
   // Generate the favicons
   var compilationResult;
